@@ -1,0 +1,36 @@
+<md-content>
+    <md-card md-theme="default">
+    <md-toolbar>
+        <div class="md-toolbar-tools" >
+            <h3>
+                Add Blog
+            </h3>
+        </div>
+    </md-toolbar>
+    <form   ng-model="addNewBlog" style="padding-left: 20px" >
+        <div>
+            <br/>
+            <label>
+                title: <input type="text"  ng-model="ctrl.addNewBlog.title" >
+            </label>
+        </div>
+        <br/>
+        <div>
+                <label>
+                    Story: <textarea ng-model="ctrl.addNewBlog.story" ></textarea>
+                </label>
+        </div>
+        <br/>
+        <div>
+                Writer: <input type="text"  ng-model="ctrl.addNewBlog.writer" >
+        </div>
+        <br/>
+        <div>
+            <button type="submit" ng-click="ctrl.onSubmit()">Submit</button>
+            <button type="reset" >Cancel</button>
+        </div>
+    </form>
+    </md-card>
+</md-content>
+
+

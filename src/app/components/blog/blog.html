@@ -1,0 +1,11 @@
+<md-list-item class="md-3-line">
+    <div class="md-list-item-text" layout="column">
+
+        <h3>Writer: {{ctrl.blog.writer}}</h3>
+        <h3>Title: {{ctrl.blog.title}}</h3>
+        <h3>Story: {{ctrl.blog.story}}</h3>
+
+        <button ng-click="ctrl.goto('editblog',ctrl.blog.id)">Edit</button>
+        <button ng-click="ctrl.removeStory()">Remove</button>
+    </div>
+</md-list-item>
