@@ -1,0 +1,52 @@
+$radius: 6px;
+button{
+
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  padding: 10px 20px;
+
+  border-radius: $radius;
+  color: #fff;
+  background-color: #562ca9;
+  border: 2px solid #7e53d6;
+  margin-bottom: 10px;
+  outline: none;
+  transition: transform 0.2s;
+  &:hover{
+    transform: scale(1.05);
+  }
+  &:active,&:focus{
+    outline: none;
+  }
+}
+input[type="text"],input[type="number"],textarea{
+  outline: none;
+  border: 1px solid #cecece;
+  border-radius: $radius ;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+  background-color: #f8f8f8;
+  padding: 5px;
+
+  &:hover,&:focus{
+    background: #fdfdfd;
+  }
+}
+label{
+  outline: none;
+  padding-left: 20px;
+
+
+}
+
+.table{
+  display: table;
+  >div{
+    display: table-row;
+    >div{
+      display: table-cell;
+    }
+  }
+
+ }
+
+
+

@@ -13,7 +13,10 @@ const StudentApiService = (Restangular) => {
          return Restangular.one("blog",id).get();
     };
     const addBlog = (blog) => {
-         return logEntryRestApi.post(blog);
+        debugger;
+         return logEntryRestApi.post(blog, (error,id) =>{
+             debugger;
+         });
     };
     const removeBlog = (id) => {
        return logEntryRestApi.one(id).remove();

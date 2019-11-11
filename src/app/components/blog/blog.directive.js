@@ -1,6 +1,6 @@
 import template from './blog.html';
 import controller from './blog.controller';
-
+// import './blog.scss';
 
 const blogDirective = function () {
     return {

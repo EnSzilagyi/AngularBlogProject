@@ -7,27 +7,41 @@
             </h3>
         </div>
     </md-toolbar>
-    <form   ng-model="addNewBlog" style="padding-left: 20px" >
+    <form   ng-model="addNewBlog"  class="table" >
         <div>
-            <br/>
-            <label>
-                title: <input type="text"  ng-model="ctrl.addNewBlog.title" >
-            </label>
-        </div>
-        <br/>
-        <div>
-                <label>
-                    Story: <textarea ng-model="ctrl.addNewBlog.story" ></textarea>
+            <div>
+                <label >
+                    Writer:
                 </label>
+            </div>
+            <div>
+                <input type="text"  ng-model="ctrl.addNewBlog.writer" >
+            </div>
         </div>
-        <br/>
         <div>
-                Writer: <input type="text"  ng-model="ctrl.addNewBlog.writer" >
+            <div>
+                <label>
+                    title:
+                </label>
+            </div>
+            <div>
+                 <input type="text"  ng-model="ctrl.addNewBlog.title" >
+            </div>
         </div>
-        <br/>
+        <div>
+            <div>
+                <label>
+                    Story:
+                </label>
+            </div>
+            <div>
+                <textarea ng-model="ctrl.addNewBlog.story" ></textarea>
+            </div>
+        </div>
+
         <div>
             <button type="submit" ng-click="ctrl.onSubmit()">Submit</button>
-            <button type="reset" >Cancel</button>
+            <button type="reset" ng-click="ctrl.goto('home')">Cancel</button>
         </div>
     </form>
     </md-card>

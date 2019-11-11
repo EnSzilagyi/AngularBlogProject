@@ -17,7 +17,10 @@ class CreateBlogController {
         //console.log(this.addNewBlog);
         // debugger;
        let id = this.studentApiService.addBlog(this.addNewBlog)
-            .then()
+            .then((id) =>{
+                debugger;
+                this.state.go('blog',{id});
+            })
             .catch(function (error) {
                   console.error(error);
             });
