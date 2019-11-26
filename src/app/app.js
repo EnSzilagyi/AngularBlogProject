@@ -42,6 +42,26 @@ angular
     })
     .config((RestangularProvider) => {
         RestangularProvider.setBaseUrl('http://localhost:8080/api/');
+        // if(localStorage.getItem('token')) {
+        //     RestangularProvider.addRequestInterceptor({'Authorization': 'Bearer ' + localStorage.getItem('token')});
+        // }
+        RestangularProvider.addFullRequestInterceptor(function(element, operation, route, url, headers, params, httpConfig) {
+          //  console.log(localStorage.getItem('token'));
+            if(localStorage.getItem('token')){
+                // headers.Authentication=('Bearer ' + localStorage.getItem('token'));
+                headers.Authorization='Bearer ' + localStorage.getItem('token');
+               // console.log(localStorage.getItem('token'));
+                //console.log(localStorage.getItem('token'));
+               // console.log(headers.Bearer);
+            }
+            //headers.asd="Test";
+            return {
+                element: element,
+                params: params,
+                headers: headers,
+                httpConfig: httpConfig
+            };
+        });
     })
     .run(($transitions, cfpLoadingBar) => {
         $transitions.onStart({}, cfpLoadingBar.start);

@@ -2,20 +2,23 @@ const StudentApiService = (Restangular) => {
     'ngInject';
 
     const logEntryRestApi = Restangular.all('blog');
+    //logEntryRestApi.setDefaultHeaders({"Bearer" : Headers.Bearer});
    // Restangular.setDefaultRequestParams('jsonp', {callback: 'JSON_CALLBACK'});
     const getAllBlogs = () => {
-        return logEntryRestApi.one('/all').getList();
-        //return  Restangular.one('student/:id', id).get({id:1});
-        //return Restangular.one("student","1").getList();
+        return logEntryRestApi.all('/all').getList();
+    };
+    const getUsersBlogs= () => {
+      return logEntryRestApi.all("/usersblogs").getList();
     };
     const getBlog = (id) => {
        // return logEntryRestApi.one(id).get();
+        //console.log(Restangular.one("blog",id).get());
          return Restangular.one("blog",id).get();
     };
     const addBlog = (blog) => {
-        debugger;
-         return logEntryRestApi.post(blog, (error,id) =>{
-             debugger;
+        //debugger;
+         return logEntryRestApi.all("addblog").post(blog, (error,id) =>{
+
          });
     };
     const removeBlog = (id) => {
@@ -26,13 +29,35 @@ const StudentApiService = (Restangular) => {
         return remoteItem.save();
     };
 
+    //const intercept = Restangular.setDefaultHeaders({ authentication: 'bearer ' + localStorage.getItem('token') });
+    const userLogin = (username, password) => {
+         return Restangular.one("user").all('login').post({username: username, password: password},(error,res) =>{
+
+         });
+    };
+
+    const userSignUp = (username,password) =>{
+        return Restangular.one("user").all('signup').post({username: username, password: password},(error,res) =>{
+
+        });
+    };
+
+    const isUsersBlog = (id) => {
+      return logEntryRestApi.one("isusersblog",id).get();
+    };
+
+
     return {
         name: 'studentService',
         getAllBlogs,
         getBlog,
         addBlog,
         removeBlog,
-        updateBlog
+        updateBlog,
+        userLogin,
+        userSignUp,
+        getUsersBlogs,
+        isUsersBlog
     }
 };
 

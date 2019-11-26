@@ -6,10 +6,10 @@ class CreateBlogController {
         this.studentApiService = studentApiService;
         this.name = 'createBlog';
         this.addNewBlog = {
-            id: this.scope.id,
+            id: this .scope.id,
             title: this.scope.title,
             story: this.scope.story,
-            writer: this.scope.writer
+           // writer: this.scope.writer
         };
 
     }
@@ -18,8 +18,8 @@ class CreateBlogController {
         // debugger;
        let id = this.studentApiService.addBlog(this.addNewBlog)
             .then((id) =>{
-                debugger;
-                this.state.go('blog',{id});
+                //debugger;
+                this.state.go("home");
             })
             .catch(function (error) {
                   console.error(error);

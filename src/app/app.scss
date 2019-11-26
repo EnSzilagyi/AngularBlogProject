@@ -18,7 +18,7 @@ button{
     outline: none;
   }
 }
-input[type="text"],input[type="number"],textarea{
+input[type="text"],input[type="number"],input[type="password"],textarea{
   outline: none;
   border: 1px solid #cecece;
   border-radius: $radius ;

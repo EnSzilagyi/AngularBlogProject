@@ -13,6 +13,14 @@ class NavbarController {
     goto(page) {
         this.$state.go(page);
     }
+    logout(){
+        localStorage.removeItem('token');
+        this.goto(this.currentNavItem);
+    }
+
+    isLoggedIn(){
+        return !!localStorage.getItem('token');
+    }
 }
 
 export default NavbarController;

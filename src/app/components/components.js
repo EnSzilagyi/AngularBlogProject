@@ -6,6 +6,9 @@ import CreateBlog from './createblog/createblog.module'
 import Blog from './blog/blog.module'
 import BlogList from './bloglist/bloglist.module'
 import EditBlog from './editblog/editblog.module'
+import loginModule from "./login/login.module";
+import signUpModule from "./signup/signup.module";
+import userBlogListModule from "./userbloglist/userbloglist.module";
 
 const componentsModule = angular.module('components', [
     Home,
@@ -14,7 +17,10 @@ const componentsModule = angular.module('components', [
     CreateBlog,
     Blog,
     BlogList,
-    EditBlog
+    EditBlog,
+    loginModule,
+    signUpModule,
+    userBlogListModule
 ]).name;
 
 export default componentsModule;

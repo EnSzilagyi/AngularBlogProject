@@ -9,18 +9,16 @@
         </md-toolbar>
 
         <div style="padding: 20px 20px">
-
-
             <div>
-                <h3 style="text-align: match-parent ">     {{ctrl.blog.story}}</h3>
+                <h3 style="text-align: match-parent ">{{ctrl.blog.story}}</h3>
             </div>
 
             <div>
-                <h4 style="color: #7e53d6">By:{{ctrl.blog.writer}}</h4>
+                <h4 style="color: #7e53d6">By:{{ctrl.blog.username}}</h4>
             </div>
 
-            <button ng-click="ctrl.goto('editblog',ctrl.blog.id)">Edit</button>
-            <button ng-click="ctrl.removeStory()"> Remove </button>
+            <button  ng-show="ctrl.correctUser" ng-click="ctrl.goto('editblog',ctrl.blog.id)">Edit</button>
+            <button  ng-show="ctrl.correctUser" ng-click="ctrl.isUsersBlog()"> Remove </button>
         </div>
 
 </md-content>

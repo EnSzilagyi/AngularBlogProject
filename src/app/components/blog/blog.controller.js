@@ -8,7 +8,8 @@ class   BlogController {
         this.studentApiService = studentApiService;
         this.blog = {};
         this.name = 'Entryblog';
-        console.log(this.blogEntryId);
+       // console.log(this.blogEntryId);
+        this.correctUser = false;
     }
 
 
@@ -16,6 +17,9 @@ class   BlogController {
         this.studentApiService.getBlog(this.blogEntryId).then((blog) => {
             this.blog= blog;
         });
+        this.studentApiService.isUsersBlog(this.blogEntryId).then((res) =>{
+            this.correctUser = res;
+        })
     }
 
     removeStory(){

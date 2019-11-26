@@ -8,20 +8,21 @@ class   editBlogController {
         this.studentApiService = studentApiService;
         this.editBlogEntry = {};
         this.name = 'editBlog';
-        console.log(this.blogEntryId)
+        //console.log(this.blogEntryId)
     }
 
 
     $onInit() {
         this.studentApiService.getBlog(this.blogEntryId).then((editBlogEntry) => {
             this.editBlogEntry=editBlogEntry;
-            console.log(editBlogEntry);
-            console.log(this.editBlogEntry);
+           // console.log(editBlogEntry);
+            //console.log(this.editBlogEntry);
         });
     }
 
 
     applyEdit(){
+        //console.log(this.editBlogEntry);
         this.studentApiService.updateBlog(this.editBlogEntry).then(this.goto("blog", this.editBlogEntry.id))
 
             .catch(function (e) {
