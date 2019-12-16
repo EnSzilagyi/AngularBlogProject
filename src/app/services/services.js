@@ -1,10 +1,8 @@
 import angular from "angular";
-import StudentApiService from "./student/student.api.module";
-import jwtInterceptorService from "./interceptor/jwt.interceptor.module";
+import ArticleApiService from "./article/article.api.module";
 
 const servicesModule = angular.module('services', [
-    StudentApiService,
-    jwtInterceptorService
+    ArticleApiService,
 ]).name;
 
 export default servicesModule;

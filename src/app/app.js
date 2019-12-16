@@ -4,7 +4,6 @@ import angularLoadingBar from 'angular-loading-bar';
 import ngAnimate from 'angular-animate';
 import ngAria from 'angular-aria';
 import ngMaterial from 'angular-material';
-import RestangularProvder from 'restangular';
 import Components from './components/components';
 import Services from './services/services';
 import AppComponent from './app.component';
@@ -37,24 +36,14 @@ angular
         $mdThemingProvider.theme("green")
             .primaryPalette("teal")
             .accentPalette("red");
-
         $mdThemingProvider.alwaysWatchTheme(true);
     })
     .config((RestangularProvider) => {
         RestangularProvider.setBaseUrl('http://localhost:8080/api/');
-        // if(localStorage.getItem('token')) {
-        //     RestangularProvider.addRequestInterceptor({'Authorization': 'Bearer ' + localStorage.getItem('token')});
-        // }
-        RestangularProvider.addFullRequestInterceptor(function(element, operation, route, url, headers, params, httpConfig) {
-          //  console.log(localStorage.getItem('token'));
-            if(localStorage.getItem('token')){
-                // headers.Authentication=('Bearer ' + localStorage.getItem('token'));
-                headers.Authorization='Bearer ' + localStorage.getItem('token');
-               // console.log(localStorage.getItem('token'));
-                //console.log(localStorage.getItem('token'));
-               // console.log(headers.Bearer);
+        RestangularProvider.addFullRequestInterceptor(function (element, operation, route, url, headers, params, httpConfig) {
+            if (localStorage.getItem('token')) {
+                headers.Authorization = 'Bearer ' + localStorage.getItem('token');
             }
-            //headers.asd="Test";
             return {
                 element: element,
                 params: params,

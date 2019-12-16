@@ -6,13 +6,12 @@
         <md-nav-item md-nav-click="$ctrl.goto('home')" name="home">
             Home
         </md-nav-item>
-        <md-nav-item ng-if="$ctrl.isLoggedIn()" md-nav-click="$ctrl.goto('createBlog')" name="createBlog">
+        <md-nav-item ng-if="$ctrl.isLoggedIn()" md-nav-click="$ctrl.goto('createArticle')" name="createBlog">
             Create Blog
         </md-nav-item>
-        <md-nav-item ng-if="$ctrl.isLoggedIn()" md-nav-click="$ctrl.goto('userbloglist')" name="about">
+        <md-nav-item ng-if="$ctrl.isLoggedIn()" md-nav-click="$ctrl.goto('userArticleList')" name="about">
             My Profile
         </md-nav-item>
-
         <md-nav-item ng-if="!$ctrl.isLoggedIn()" md-nav-click="$ctrl.goto('login')" name="login">
             Login
         </md-nav-item>

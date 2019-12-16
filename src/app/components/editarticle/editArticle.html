@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <label>
+            <textarea ng-model="ctrl.editBlogEntry.story">
+                {{ctrl.editBlogEntry.story}}
+            </textarea>
+        <button ng-click="ctrl.applyEdit()">Confirm</button>
+        <button ng-click="ctrl.cancelEdit()">Cancel</button>
+    </label>
+</form>
+</body>
+</html>

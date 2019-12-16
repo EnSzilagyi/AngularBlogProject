@@ -26,7 +26,7 @@ describe('Navbar', () => {
         // component/directive specs
         let component = navbarComponent();
 
-        it('includes the intended template',() => {
+        it('includes the intended template', () => {
             expect(component.template).to.equal(NavbarTemplate);
         });
 

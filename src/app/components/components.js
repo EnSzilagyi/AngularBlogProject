@@ -2,13 +2,13 @@ import angular from 'angular';
 import Home from './home/home.module';
 import About from './about/about.module';
 import NavBar from './navbar/navbar.module';
-import CreateBlog from './createblog/createblog.module'
-import Blog from './blog/blog.module'
-import BlogList from './bloglist/bloglist.module'
-import EditBlog from './editblog/editblog.module'
+import CreateBlog from './createarticle/createArticle.module'
+import Blog from './article/article.module'
+import BlogList from './articlelist/articleList.module'
+import EditBlog from './editarticle/editArticle.module'
 import loginModule from "./login/login.module";
 import signUpModule from "./signup/signup.module";
-import userBlogListModule from "./userbloglist/userbloglist.module";
+import userArticleListModule from "./userarticlelist/userArticleList.module";
 
 const componentsModule = angular.module('components', [
     Home,
@@ -20,7 +20,7 @@ const componentsModule = angular.module('components', [
     EditBlog,
     loginModule,
     signUpModule,
-    userBlogListModule
+    userArticleListModule
 ]).name;
 
 export default componentsModule;

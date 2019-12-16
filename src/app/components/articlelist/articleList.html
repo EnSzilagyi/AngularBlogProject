@@ -1,0 +1,25 @@
+<md-content>
+    <md-card md-theme="default">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h3>
+                    Articles
+                </h3>
+            </div>
+        </md-toolbar>
+        <md-list flex>
+            <div ng-repeat="blog in $ctrl.articles.content">
+                <md-list-item class="md-3-line">
+                    <div class="md-list-item-text" layout="column" ng-click="$ctrl.goto('article', blog.id)">
+                        <div>
+                            <h3>{{blog.title}}</h3>
+                        </div>
+                        <div ng-repeat="authors in blog.authors">
+                            <h4>By:{{authors.name}}</h4>
+                        </div>
+                    </div>
+                </md-list-item>
+            </div>
+        </md-list>
+    </md-card>
+</md-content>

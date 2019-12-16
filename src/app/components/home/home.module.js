@@ -6,9 +6,7 @@ let homeModule = angular.module('appHome', [
     uiRouter
 ])
     .config(($stateProvider, $urlRouterProvider) => {
-
         $urlRouterProvider.otherwise('/');
-
         $stateProvider
             .state('home', {
                 url: '/',

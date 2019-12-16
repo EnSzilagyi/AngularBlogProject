@@ -1,10 +1,10 @@
 import angular from 'angular';
 import signUpDirective from "./signup.directive";
 import uiRouter from "@uirouter/angularjs";
-import studentApiService from "../../services/student/student.api.module";
+import articleApiService from "../../services/article/article.api.module";
 
 const signUpModule = angular
-    .module('appSignUp', [uiRouter,studentApiService])
+    .module('appSignUp', [uiRouter,articleApiService])
     .directive('appSignUp', signUpDirective)
     .config(($stateProvider) =>{
         $stateProvider.state('signup',{
@@ -15,5 +15,3 @@ const signUpModule = angular
     .name;
 
 export default signUpModule;
-
-// import angular from 'angular';
