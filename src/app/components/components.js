@@ -9,6 +9,8 @@ import EditBlog from './editarticle/editArticle.module'
 import loginModule from "./login/login.module";
 import signUpModule from "./signup/signup.module";
 import userArticleListModule from "./userarticlelist/userArticleList.module";
+import userListModule from "./userList/userList.module";
+import notificationModule from "./Notification/notification.module";
 
 const componentsModule = angular.module('components', [
     Home,
@@ -20,7 +22,9 @@ const componentsModule = angular.module('components', [
     EditBlog,
     loginModule,
     signUpModule,
-    userArticleListModule
+    userArticleListModule,
+    userListModule,
+    notificationModule
 ]).name;
 
 export default componentsModule;

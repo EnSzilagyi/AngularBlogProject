@@ -1,6 +1,4 @@
-
-
-class  loginController {
+class  notificationController {
     constructor($scope,$stateParams,$state,$http,articleApiService) {
         'ngInject';
         this.articleApiService = articleApiService;
@@ -14,19 +12,19 @@ class  loginController {
     }
 
 
-   signUp(){
-       if(this.password === this.repeatPassword) {
-           this.articleApiService.userSignUp(this.username, this.password)
-               .then(this.state.go('home')
+    signUp(){
+        if(this.password === this.repeatPassword) {
+            this.articleApiService.userSignUp(this.username, this.password)
+                .then(this.state.go('home')
 
-               )
-               .catch(function (error) {
-                   console.log(error);
-               })
-       }
-       else{
-           window.alert("Password doesn't match");
-       }
+                )
+                .catch(function (error) {
+                    console.log(error);
+                })
+        }
+        else{
+            window.alert("Password doesn't match");
+        }
     }
 
     goto(page, id) {
@@ -36,4 +34,4 @@ class  loginController {
 
 }
 
-export default loginController;
+export default notificationController;

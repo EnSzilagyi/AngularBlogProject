@@ -6,6 +6,9 @@
         <md-nav-item md-nav-click="$ctrl.goto('home')" name="home">
             Home
         </md-nav-item>
+        <md-nav-item md-nav-click="$ctrl.goto('userList')" name="home">
+            Users
+        </md-nav-item>
         <md-nav-item ng-if="$ctrl.isLoggedIn()" md-nav-click="$ctrl.goto('createArticle')" name="createBlog">
             Create Blog
         </md-nav-item>
